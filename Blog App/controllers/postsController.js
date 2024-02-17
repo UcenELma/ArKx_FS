@@ -1,26 +1,15 @@
+
 const fs = require('fs');
 const path = require('path');
-const postsFilePath = path.join(__dirname, '../posts.json');
-
-const readPostsFromFile = () => {
-  const data = fs.readFileSync(postsFilePath);
-  return JSON.parse(data);
-};
-
-const writePostsToFile = (postsData) => {
-  const jsonData = JSON.stringify(postsData, null, 2);
-  fs.writeFileSync(postsFilePath, jsonData);
-};
+const posts = require('../posts');
 
 const postsController = {
   getAllPosts: (req, res) => {
-    const posts = readPostsFromFile();
     res.json(posts);
   },
 
   getPostById: (req, res) => {
     const id = req.params.id;
-    const posts = readPostsFromFile();
     const post = posts.find((p) => p.id === Number(id));
 
     if (!post) {
@@ -38,14 +27,15 @@ const postsController = {
     }
 
     const newPost = {
-      id: Date.now(), // Use timestamp as a unique ID
+      id: posts.length === 0 ? 1 : posts[posts.length - 1].id + 1,
       title: title,
       post: post,
     };
-
-    const posts = readPostsFromFile();
     posts.push(newPost);
-    writePostsToFile(posts);
+
+    // Save updated posts array to posts.json
+    const postsPath = path.join(__dirname, '../posts.json');
+    fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2));
 
     res.status(201).json(posts);
   },

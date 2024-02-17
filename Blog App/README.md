@@ -12,20 +12,22 @@ git clone https://github.com/UcenELma/ArKx_FS.git
 
 2. Navigate to the project directory:
 bash
-Copy code
+
 cd ArKx_FS/Blog\ App
 
 
 3. Install the dependencies:
 bash
-Copy code
-npm install
+
+npm init -y
+npm i express
+npm i -D nodemon
 
 ### Usage
 Start the server:
 
 bash
-Copy code
+
 npm run dev
 The server will be running at http://localhost:3000.
 
@@ -45,5 +47,15 @@ To create a new blog post: POST http://localhost:3000/posts with JSON body { "ti
 To retrieve a specific blog post: GET http://localhost:3000/posts/1 (replace 1 with the actual post ID)
 To update a blog post: PUT http://localhost:3000/posts/1 with JSON body { "title": "Updated Post", "content": "This post has been updated." }
 To delete a blog post: DELETE http://localhost:3000/posts/1 (replace 1 with the actual post ID)
+
+
+
+
+
+
+
+
+
+
 
 
