@@ -27,7 +27,7 @@ const postsController = {
     }
 
     const newPost = {
-      id: posts.length === 0 ? 1 : posts[posts.length - 1].id + 1,
+      id: posts.length + 1,
       title: title,
       post: post,
     };
