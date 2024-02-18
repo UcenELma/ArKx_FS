@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 3000;
+const port = 1919;
 
 const postsRoutes = require('./routes/postsRoutes');
 const errorController = require('./controllers/errorController');
