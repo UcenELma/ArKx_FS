@@ -29,7 +29,7 @@ Start the server:
 bash
 
 npm run dev
-The server will be running at http://localhost:3000.
+The server will be running at http://localhost:1919.
 
 Access the application in your browser or use a tool like Postman to interact with the API.
 
@@ -42,15 +42,15 @@ DELETE /posts/:id: Delete a blog post by ID.
 
 
 #### Example Usage
-To retrieve all blog posts: GET http://localhost:3000/posts
+To retrieve all blog posts: GET http://localhost:1919/posts
 
-To create a new blog post: POST http://localhost:3000/posts with JSON body { "title": "New Post", "content": "This is a new blog post." }
+To create a new blog post: POST http://localhost:1919/posts with JSON body { "title": "New Post", "content": "This is a new blog post." }
 
-To retrieve a specific blog post: GET http://localhost:3000/posts/1 (replace 1 with the actual post ID)
+To retrieve a specific blog post: GET http://localhost:1919/posts/1 (replace 1 with the actual post ID)
 
-To update a blog post: PUT http://localhost:3000/posts/1 with JSON body { "title": "Updated Post", "content": "This post has been updated." }
+To update a blog post: PUT http://localhost:1919/posts/1 with JSON body { "title": "Updated Post", "content": "This post has been updated." }
 
-To delete a blog post: DELETE http://localhost:3000/posts/1 (replace 1 with the actual post ID)
+To delete a blog post: DELETE http://localhost:1919/posts/1 (replace 1 with the actual post ID)
 
 
 
