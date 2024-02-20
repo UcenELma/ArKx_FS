@@ -43,9 +43,13 @@ DELETE /posts/:id: Delete a blog post by ID.
 
 #### Example Usage
 To retrieve all blog posts: GET http://localhost:3000/posts
+
 To create a new blog post: POST http://localhost:3000/posts with JSON body { "title": "New Post", "content": "This is a new blog post." }
+
 To retrieve a specific blog post: GET http://localhost:3000/posts/1 (replace 1 with the actual post ID)
+
 To update a blog post: PUT http://localhost:3000/posts/1 with JSON body { "title": "Updated Post", "content": "This post has been updated." }
+
 To delete a blog post: DELETE http://localhost:3000/posts/1 (replace 1 with the actual post ID)
 
 
