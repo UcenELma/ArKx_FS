@@ -10,7 +10,7 @@ const postsController = {
 
   getPostById: (req, res) => {
     const id = req.params.id;
-    const post = posts.find((p) => p.id === Number(id));
+    const post = posts.find((p) => p.id === parseInt(id));
 
     if (!post) {
       res.status(404).send('Post not found');
@@ -22,12 +22,13 @@ const postsController = {
   createPost: (req, res) => {
     const { title, post } = req.body;
 
-    if (!title || !post) {
-      return res.status(400).json({ message: 'Title and post content are required' });
-    }
+    // if (!title || !post) {
+    //   return res.status(400).json({ message: 'Title and post content are required' });
+    // }
 
+    const maxId = posts.reduce((max, post) => (post.id > max ? post.id : max), 0);
     const newPost = {
-      id: posts.length + 1,
+      id: maxId + 1,
       title: title,
       post: post,
     };
