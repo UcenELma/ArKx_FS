@@ -34,7 +34,7 @@ const postsController = {
     };
     posts.push(newPost);
 
-    // Save updated posts array to posts.json
+    
     const postsPath = path.join(__dirname, '../posts.json');
     fs.writeFileSync(postsPath, JSON.stringify(posts, null, 2));
 
