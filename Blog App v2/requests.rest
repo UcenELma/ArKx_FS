@@ -1,0 +1,6 @@
+POST ://localhost:3000/auth/login
+
+{
+  "username": "example",
+  "password": "password"
+}
